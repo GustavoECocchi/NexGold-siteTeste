@@ -1,10 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import RevealText from "@/components/motion/RevealText";
 import { hero } from "@/lib/content";
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  // Fixed to the viewport (not the section) so it reacts to scroll position
+  // directly — fades out as soon as scrolling starts, fades back in when
+  // scrolling back to the top, instead of just scrolling off with the page.
+  const hintOpacity = useTransform(scrollY, [0, 240], [1, 0]);
+
   return (
     <section
       id="top"
@@ -53,10 +59,8 @@ export default function Hero() {
       </motion.p>
 
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1 }}
-        className="absolute bottom-10 left-6 flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-foreground-muted md:left-12"
+        style={{ opacity: hintOpacity }}
+        className="fixed bottom-10 left-6 z-30 flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-foreground-muted md:left-12"
       >
         <span className="h-8 w-px bg-gradient-to-b from-gold to-transparent" />
         Role para explorar

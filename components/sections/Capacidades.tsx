@@ -54,7 +54,7 @@ export default function Capacidades() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.5 }}
           className="relative z-10 mx-auto mb-16 flex w-fit items-center gap-2 rounded-full border border-line bg-background-elevated px-5 py-2 md:mb-0"
         >
@@ -94,7 +94,7 @@ export default function Capacidades() {
                         key={item.title}
                         initial={{ opacity: 0, x: -12 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-10%" }}
+                        viewport={{ once: false, margin: "-10%" }}
                         transition={{ duration: 0.4, delay: i * 0.08 }}
                         className="relative"
                       >
@@ -105,7 +105,13 @@ export default function Capacidades() {
                           }`}
                         />
                         <Tilt3D maxTilt={4} glare={false}>
-                          <div className="rounded-xl border border-line p-5 transition-colors hover:border-foreground-muted">
+                          <div
+                            className={`rounded-xl border border-line p-5 transition-all duration-300 ${
+                              accent === "blue"
+                                ? "hover:border-blue hover:shadow-[0_0_24px_-6px_var(--blue)]"
+                                : "hover:border-gold hover:shadow-[0_0_24px_-6px_var(--gold)]"
+                            }`}
+                          >
                             <h4 className="mb-1 font-display text-lg text-foreground">
                               {item.title}
                             </h4>
