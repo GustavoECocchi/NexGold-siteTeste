@@ -1,16 +1,20 @@
 /**
- * Institutional copy sourced verbatim from "Valores NexGold.docx" and the
- * concept brief "NexGold — O Site como Demonstração de Capacidade.pdf".
- * Keep wording literal where it comes from the docx (Missão/Visão/Valores/
- * Diferencial) — it is the client's own positioning language, not ours to
- * paraphrase.
+ * Institutional copy. Wording that comes from "Valores NexGold.docx"
+ * (Missão/Visão/Valores/Diferencial, Quem Somos) is kept literal — it is the
+ * client's own positioning language, not ours to paraphrase.
+ *
+ * The PDF brief ("O Site como Demonstração de Capacidade") is a strategy
+ * document about how the site should make a visitor feel — it is not
+ * NexGold's voice and its lines should never be quoted verbatim as if a
+ * visitor or the company said them. Use it to decide structure/tone, not
+ * as a copy source.
  */
 
 export const hero = {
   eyebrow: "NexGold",
   title: "A engenharia por trás do crescimento.",
   subtitle:
-    "Se eles fizeram isso para a própria empresa, quero ver o que conseguem construir para a minha.",
+    "Não somos uma agência de marketing. Somos uma célula de inteligência e desenvolvimento voltada para a escala de negócios.",
 };
 
 export const manifesto = {
@@ -125,7 +129,7 @@ export const processo = {
 export const encerramento = {
   heading: "O que podemos construir juntos?",
   principle:
-    "A NexGold não precisa dizer que sabe construir produtos digitais de alto nível. Você pode perceber isso usando o que construímos para nós mesmos: este site.",
+    "Soluções tecnológicas sob medida que convertem presença digital em ativos de alto valor — para o seu negócio, não para o mercado observável.",
 };
 
 export const techMarquee = [
