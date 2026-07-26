@@ -72,16 +72,40 @@ export const diferencial = {
   },
 };
 
+/**
+ * "O que fazemos" is deliberately modeled as one connected system with two
+ * branches (Desenvolvimento / Marketing), not two separate paths — this
+ * matches the docx's own framing ("ecossistemas onde o marketing
+ * personalizado e o desenvolvimento de produtos... trabalham juntos"),
+ * not a bifurcation.
+ */
 export const capacidades = {
   heading: "O que fazemos",
-  intro: "Software, IA, desenvolvimento e soluções digitais.",
-  items: [
-    { title: "Software", text: "Sistemas sob medida para operações reais, não templates genéricos." },
-    { title: "Produtos digitais", text: "Do zero ao produto: plataformas, dashboards, ferramentas internas." },
-    { title: "Inteligência artificial", text: "IA aplicada a processo comercial, não IA como enfeite de pitch." },
-    { title: "Automação", text: "Eliminação de trabalho manual repetitivo com processos e integrações." },
-    { title: "Experiências web", text: "Sites e interfaces que comunicam capacidade técnica na própria execução." },
-    { title: "Sistemas", text: "Arquitetura pensada para crescer junto com o negócio do cliente." },
+  intro:
+    "Desenvolvimento e marketing não operam em paralelo — fazem parte do mesmo sistema.",
+  hub: "NexGold",
+  branches: [
+    {
+      label: "Desenvolvimento",
+      items: [
+        { title: "Software", text: "Sistemas sob medida para operações reais, não templates genéricos." },
+        { title: "Produtos digitais", text: "Do zero ao produto: plataformas, dashboards, ferramentas internas." },
+        { title: "Inteligência artificial", text: "IA aplicada a processo comercial, não IA como enfeite de pitch." },
+        { title: "Automação", text: "Eliminação de trabalho manual repetitivo com processos e integrações." },
+        { title: "Experiências web", text: "Sites e interfaces que comunicam capacidade técnica na própria execução." },
+        { title: "Sistemas", text: "Arquitetura pensada para crescer junto com o negócio do cliente." },
+      ],
+    },
+    {
+      label: "Marketing",
+      items: [
+        { title: "Gestão comercial", text: "Processos de venda otimizados por tecnologia, não por achismo." },
+        { title: "Tráfego e performance", text: "Aquisição paga orientada a dados, não a métricas de vaidade." },
+        { title: "Marketing personalizado", text: "Estratégia sob medida para o seu processo comercial, não um pacote genérico." },
+        { title: "Design estratégico", text: "Identidade e criativos como ferramentas de conversão e autoridade." },
+        { title: "Análise de processos", text: "Mapeamento do funil comercial para decisões com dados concretos." },
+      ],
+    },
   ],
 };
 
