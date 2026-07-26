@@ -4,7 +4,6 @@ import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import CustomCursor from "@/components/layout/CustomCursor";
 import GrainOverlay from "@/components/layout/GrainOverlay";
-import SignatureLine from "@/components/layout/SignatureLine";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,7 +36,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <GrainOverlay />
         <CustomCursor />
-        <SignatureLine />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
