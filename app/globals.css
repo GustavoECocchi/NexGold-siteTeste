@@ -103,6 +103,19 @@ h4 {
   }
 }
 
+.cursor-particles {
+  position: fixed;
+  inset: 0;
+  z-index: 65;
+  pointer-events: none;
+}
+
+@media (pointer: coarse) {
+  .cursor-particles {
+    display: none;
+  }
+}
+
 .text-balance {
   text-wrap: balance;
 }

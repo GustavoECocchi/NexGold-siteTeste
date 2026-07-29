@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import CustomCursor from "@/components/layout/CustomCursor";
+import CursorParticles from "@/components/layout/CursorParticles";
 import GrainOverlay from "@/components/layout/GrainOverlay";
 
 const inter = Inter({
@@ -35,6 +36,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <GrainOverlay />
+        <CursorParticles />
         <CustomCursor />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
