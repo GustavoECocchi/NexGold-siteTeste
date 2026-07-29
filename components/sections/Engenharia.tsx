@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import RevealText from "@/components/motion/RevealText";
 import AmbientGlow from "@/components/layout/AmbientGlow";
+import EngenhariaVisual from "@/components/motion/EngenhariaVisual";
 import { engenharia } from "@/lib/content";
 
 export default function Engenharia() {
@@ -23,19 +24,27 @@ export default function Engenharia() {
         <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3 lg:grid-cols-4">
           {engenharia.items.map((item, i) => (
             <motion.div
-              key={item}
+              key={item.title}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="flex min-h-[140px] flex-col justify-between bg-background-elevated p-6"
+              className="flex min-h-[220px] flex-col gap-3 bg-background-elevated p-6"
             >
               <span className="font-display text-xs text-gold-dim">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="font-display text-lg text-foreground">
-                {item}
-              </span>
+              <div>
+                <h3 className="font-display text-lg text-foreground">
+                  {item.title}
+                </h3>
+                <p className="mt-1 text-sm leading-relaxed text-foreground-muted">
+                  {item.text}
+                </p>
+              </div>
+              <div className="mt-auto h-16">
+                <EngenhariaVisual variant={item.variant} />
+              </div>
             </motion.div>
           ))}
         </div>

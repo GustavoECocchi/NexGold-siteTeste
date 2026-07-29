@@ -131,17 +131,50 @@ export const projeto = {
   ],
 };
 
+/**
+ * Unlike "capacidades" (o que a NexGold entrega ao cliente), esta seção
+ * descreve o princípio de engenharia por trás de cada frente — o padrão
+ * interno que sustenta a entrega, não a entrega em si.
+ */
 export const engenharia = {
   heading: "Engenharia",
   intro: "Uma oportunidade de mostrar que existe profundidade técnica por trás do visual.",
   items: [
-    "Arquitetura",
-    "Backend",
-    "Frontend",
-    "Inteligência artificial",
-    "Dados",
-    "Infraestrutura",
-    "Integrações",
+    {
+      title: "Arquitetura",
+      text: "Decisões que sustentam anos de crescimento, não só o próximo deploy.",
+      variant: "arquitetura" as const,
+    },
+    {
+      title: "Backend",
+      text: "Lógica de negócio isolada da interface — testável, sem gambiarra.",
+      variant: "backend" as const,
+    },
+    {
+      title: "Frontend",
+      text: "Interface como consequência da arquitetura, não uma camada solta.",
+      variant: "frontend" as const,
+    },
+    {
+      title: "Inteligência artificial",
+      text: "Modelos aplicados ao processo real, com dado de verdade por trás.",
+      variant: "ia" as const,
+    },
+    {
+      title: "Dados",
+      text: "Modelagem pensada pra escala antes de precisar escalar.",
+      variant: "dados" as const,
+    },
+    {
+      title: "Infraestrutura",
+      text: "Ambiente que aguenta produção — não só a demo.",
+      variant: "infra" as const,
+    },
+    {
+      title: "Integrações",
+      text: "Sistemas conversando entre si, sem ponto único de falha.",
+      variant: "integracoes" as const,
+    },
   ],
 };
 
