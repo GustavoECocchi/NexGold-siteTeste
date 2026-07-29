@@ -80,7 +80,10 @@ export default function CursorParticles() {
     let lastTime = performance.now();
 
     const tick = (now: number) => {
-      const dt = now - lastTime;
+      // rAF pauses in a backgrounded tab, so the first frame back can report a
+      // multi-second delta. Unclamped, that advances every particle far off
+      // screen for one visible frame before they age out. Cap at ~2 frames.
+      const dt = Math.min(now - lastTime, 32);
       lastTime = now;
       ctx.clearRect(0, 0, width, height);
 
