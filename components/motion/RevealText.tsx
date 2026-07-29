@@ -14,7 +14,16 @@ interface RevealTextProps {
   stagger?: number;
   /** split by "word" (default) or "line" (whole string as one block) */
   splitBy?: "word" | "none";
+  /**
+   * Words to render in the serif accent style (italic, gold) — matched
+   * ignoring surrounding punctuation and case, e.g. "crescimento" also
+   * matches "crescimento." in the source string.
+   */
+  accentWords?: string[];
 }
+
+const normalizeWord = (word: string) =>
+  word.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, "").toLowerCase();
 
 /**
  * Scroll-triggered text reveal: words rise from a clipped mask as the
@@ -27,6 +36,7 @@ export default function RevealText({
   className = "",
   stagger = 0.04,
   splitBy = "word",
+  accentWords = [],
 }: RevealTextProps) {
   const ref = useRef<HTMLElement>(null);
 
@@ -58,21 +68,30 @@ export default function RevealText({
 
   const Tag = as as React.ElementType;
   const words = children.split(" ");
+  const accentSet = new Set(accentWords.map(normalizeWord));
 
   return (
     <Tag ref={ref} className={className}>
       {splitBy === "word"
-        ? words.map((word, i) => (
-            <span
-              key={i}
-              className="inline-block overflow-hidden align-bottom"
-            >
-              <span data-reveal-word className="inline-block will-change-transform">
-                {word}
-                {i < words.length - 1 ? " " : ""}
+        ? words.map((word, i) => {
+            const isAccent = accentSet.has(normalizeWord(word));
+            return (
+              <span
+                key={i}
+                className="inline-block overflow-hidden align-bottom"
+              >
+                <span
+                  data-reveal-word
+                  className={`inline-block will-change-transform ${
+                    isAccent ? "font-accent italic text-gold-light" : ""
+                  }`}
+                >
+                  {word}
+                  {i < words.length - 1 ? " " : ""}
+                </span>
               </span>
-            </span>
-          ))
+            );
+          })
         : children}
     </Tag>
   );

@@ -11,6 +11,7 @@ export default function Processo() {
         <RevealText
           as="h2"
           className="text-balance font-display text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl"
+          accentWords={["produto"]}
         >
           {processo.text}
         </RevealText>

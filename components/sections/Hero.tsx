@@ -45,6 +45,7 @@ export default function Hero() {
       <RevealText
         as="h1"
         className="max-w-4xl text-balance font-display text-4xl font-medium leading-[1.05] tracking-tight text-foreground sm:text-6xl md:text-7xl"
+        accentWords={["crescimento"]}
       >
         {hero.title}
       </RevealText>
